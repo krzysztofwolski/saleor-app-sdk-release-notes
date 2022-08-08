@@ -5,12 +5,39 @@
     "releaseName": "${version}"
   },
   "npm": {
-    "publish": true
+    "publish": false
   },
   "plugins": {
     "@release-it/bumper": {
-      "in": "package.json",
-      "out": ["package.json"]
+      "in": "package.json"
+    },
+    "news-fragments": {
+      "changelogFile": "CHANGELOG.md",
+      "changelogDateFormat": "YYYY-MM-DD",
+      "fragmentsFolder": "fragments",
+      "changelogTemplate": "# [{{newVersion}}] - ({{bumpDate}})\n{{#fragments}}\n## {{title}}\n{{#each fragmentEntries}}\n* {{{this}}}\n{{/each}}\n{{/fragments}}",
+      "fragmentsTypes": [
+        {
+          "title": "Features",
+          "extension": "feature"
+        },
+        {
+          "title": "Bugfixes",
+          "extension": "fix"
+        },
+        {
+          "title": "Documentation",
+          "extension": "doc"
+        },
+        {
+          "title": "Breaking changes",
+          "extension": "breaking"
+        },
+        {
+          "title": "Misc",
+          "extension": "misc"
+        }
+      ]
     }
   }
 }
