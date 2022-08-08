@@ -11,7 +11,8 @@
     "test": "vitest",
     "prepare": "husky install",
     "lint": "prettier --loglevel warn --write . && eslint --fix .",
-    "release": "release-it"
+    "release": "release-it",
+    "note": "news-fragments create"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "retes": "^0.29.4"
   },
   "devDependencies": {
+    "news-fragments": "^2.0.2",
     "@release-it/bumper": "^4.0.0",
     "@types/node": "^18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
